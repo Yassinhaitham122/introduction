@@ -48,9 +48,16 @@ def bangalore_to_bangalore(calls):
       if call[1].startswith("(080)"):
         bangalore += 1
   return (bangalore / total) * 100 if total > 0 else 0
+
 percentage = bangalore_to_bangalore(calls)
 
 print(f"{percentage:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+
+codes = get_bangalore_codes(calls)
+print("The numbers called by people in Bangalore have codes:")
+for code in codes:
+    print(code)
+
 """
 TASK 3:
 (080) is the area code for fixed line telephones in Bangalore.
